@@ -1,0 +1,12 @@
+- name: test my new module
+  hosts: localhost
+  become: true
+  tasks:
+    - name: run the new module
+      itsloop.wireguard.show:
+        interface: loop-3
+        attribute: public-key
+      register: testout
+    - name: dump test output
+      debug:
+        msg: '{{ testout }}'

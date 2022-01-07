@@ -1,0 +1,12 @@
+---
+- hosts: all
+  name: Test VM for wireguard module
+  become: true
+  tasks:
+    - name: install wireguard
+      package:
+        name: 
+          - wireguard 
+          - openresolv
+        update_cache: true
+
